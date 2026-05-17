@@ -527,3 +527,48 @@ kbd{display:inline-block;padding:2px 6px;border-radius:5px;border:1px solid var(
 
 .spin{animation:spinIcon .8s linear infinite;}
 @keyframes spinIcon{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+/* MOBILE BOTTOM NAV FIX */
+@media (max-width:768px){
+
+  html,
+  body{
+    overflow-x:hidden;
+  }
+
+  .exp-nav{
+    left:12px !important;
+    right:12px !important;
+    bottom:calc(12px + env(safe-area-inset-bottom)) !important;
+
+    width:auto !important;
+    max-width:calc(100vw - 24px) !important;
+
+    transform:none !important;
+
+    overflow-x:auto;
+    overflow-y:hidden;
+
+    -webkit-overflow-scrolling:touch;
+
+    padding:8px 10px;
+  }
+
+  .exp-nav::-webkit-scrollbar{
+    display:none;
+  }
+
+  .exp-link{
+    flex-shrink:0;
+  }
+
+  .exp-link:hover,
+  .exp-link.exp-active{
+    width:46px !important;
+    min-width:46px !important;
+    padding:0 !important;
+  }
+
+  .exp-link .exp-label{
+    display:none !important;
+  }
+}
